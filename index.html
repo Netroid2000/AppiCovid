@@ -4,18 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trazado de lineas</title>
-    <style>
-        *{
-            padding: 0;
-            margin: 0;
-        }
-    </style>
+    <title>Covidiotas</title>
+
+    <link href="estilos.css" rel="stylesheet" type="text/css">
+    
     <script src="/libs/p5.js"></script>
     <script src="/addons/p5.sound.js"></script>
     <script src="/src/js/sketch.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    
+    <script>
+    /*
+    google.charts.load('upcoming', {
+        'packages': ['geochart']
+    });
+    google.charts.setOnLoadCallback(drawRegionsMap);
+
+    function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+            ['State', 'Accent'],
+            ['Chihuahua', 100],
+            ['Baja California', '69'],
+            ['Sonora', '100'],
+            ['Coahuila', '100'],
+            ['Nuevo León', '100'],
+            ['Tamaulipas', '100'],
+            ['Sinaloa', '100'],
+            ['Nayarit', '100'],
+            ['Durango', '100'],
+            ['Zacatecas', '400'],
+            ['Jalisco', '400'],
+            ['Colima', '400'],
+            ['Tlaxcala', '400'],
+            ['Aguascalientes', '400'],
+            ['Zacatecas', '400'],
+            ['San Luis Potosí', '400'],
+            ['Puebla', '400'],
+            ['Guanajuato', '400'],
+            ['Querétaro', '400'],
+            ['Hidalgo', '400'],
+            ['Morelos', '400'],
+            ['Estado de México', 400],
+            ['Distrito Federal', 400],
+            ['Baja California Sur', '200'],
+            ['Michoacán', '200'],
+            ['Guerrero', '200'],
+            ['Oaxaca', '200'],
+            ['Veracruz', '200'],
+            ['Tabasco', '200'],
+            ['Campeche', '300'],
+            ['Chiapas', '200'],
+            ['Quintana Roo', '300'],
+            ['Yucatán', '300']
+        ]);
+
+        var options = {
+        region: 'MX', // Mexico
+        resolution: 'provinces',
+        colorAxis: {
+            //     	minValue=100,
+            //     maxValue=400,
+            values: [100, 200, 300, 400],
+            colors: ['green', 'yellow', 'violet', 'orange']
+        },
+        backgroundColor: '#81d4fa',
+        datalessRegionColor: '#eeeeee',
+        defaultColor: '#f5f5f5',
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('geochart-colors'));
+        chart.draw(data, options);
+    };
+    */
+</script>
+
 </head>
 <body>
-    <main></main>
+<main></main>
+<h1 class="h1">Covidiotas</h1>
+
+<div id="geochart-colors" style="width: 700px; height: 433px;"></div>
 </body>
 </html>
