@@ -1,34 +1,35 @@
-const key = 'pk.eyJ1IjoibmV0cm9pZCIsImEiOiJja3BhdmFjZmIwMjg3Mm9wZjU2eWw0dDVkIn0.q_xKw48VHygTcE4ME9tjgA';
-var url;
+const key = 'pk.eyJ1IjoibmV0cm9pZCIsImEiOiJja3BjODN4aHUwdjlwMzBuMjNzcmhtN254In0.HOKPapKccxVThdGipPf7Jg';
+let canvas;
 let myMap;
-let mappa = new Mappa('MapboxGL', key);
+let mappa;
 let data;
 
+// Options for map
 const options = {
   lat: 0,
   lng: 0,
   zoom: 4,
-  pitch: 50, // starting position [lng, lat]
-  zoom: 9,
-  style: 'mapbox://styles/mapbox/traffic-night-v2', // starting zoom
+  style: 'mapbox://styles/mapbox/traffic-night-v2',
+  pitch: 0,
 };
 
 
 function preload() {
-  url = "https://api.apify.com/v2/key-value-stores/vpfkeiYLXPIDIea2T/records/LATEST";
+  const url = "https://api.apify.com/v2/key-value-stores/vpfkeiYLXPIDIea2T/records/LATEST";
   data = loadJSON(url);
-  myMap = mappa.tileMap(options); // lat 0, lng 0, zoom 4
 }
-
 
 function setup() {
   //background('black');
-  createCanvas(640,640);
+  canvas = createCanvas(800,700);
+  mappa = new Mappa('MapboxGL', key);
+  myMap = mappa.tileMap(options); // lat 0, lng 0, zoom 4
   myMap.overlay(canvas);
 }
 
 function draw() {
-  text(data.State["Aguascalientes"].infected, 50, 50);
+  console.log(data);
+  //text(data.State["Aguascalientes"].infected, 50, 50);
   
   noLoop();
 }
