@@ -6,14 +6,13 @@ let data;
 
 // Options for map
 const options = {
-  lat: 0,
-  lng: 0,
+  lat: 23.4978,
+  lng:  -102.1269,
   zoom: 4,
   style: 'mapbox://styles/mapbox/traffic-night-v2',
-  pitch: 0,
 };
 
-
+//url mexican states area: https://andrew.carto.com:443/api/v2/sql?q=select * from andrew.mexican_states
 function preload() {
   const url = "https://api.apify.com/v2/key-value-stores/vpfkeiYLXPIDIea2T/records/LATEST";
   data = loadJSON(url);
@@ -21,10 +20,10 @@ function preload() {
 
 function setup() {
   //background('black');
-  canvas = createCanvas(800,700);
-  mappa = new Mappa('MapboxGL', key);
-  myMap = mappa.tileMap(options); // lat 0, lng 0, zoom 4
-  myMap.overlay(canvas);
+  //canvas = createCanvas(800,700);
+  //mappa = new Mappa('MapboxGL', key);
+  //myMap = mappa.tileMap(options); // lat 0, lng 0, zoom 4
+  //myMap.overlay(canvas);
 }
 
 function draw() {
