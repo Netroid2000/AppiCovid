@@ -1,4 +1,3 @@
-
 const boardHeight = 1800;
 const boardWidth = 1350;
 
@@ -16,19 +15,40 @@ let angles = [135.432, 13.968, 159.948, 50.616]; //Pie graph
 //infectados = 809751, fallecidos = 83507, negativos = 956251, sospechosos = 302645
 
 function draw() {
-    background(255);
-    background(220,15,40,100);
+    background('#212121');
+    //background(220,15,40,100);
     //Constultas de datos generales
+    //square(200, 20, 400, 20);
+    sombreado();
+    fill('#424242')
+    rect(25, 20, 1300, 280, 20);
     consultarInfectados();
     consultarFallecidos();
     consultarNegativos();
     consultarSospechosos();
     
     //Gráficas de barras
+    sombreado();
+    fill('#424242')
+    rect(25, 320, 1300, 900, 20);
+    fill(110,0,0);    
+    square(50,350,40,20)
+    fill('#ffff')
+    textSize(32);
+    text('Infectados', 100, 380);
     barrasInfectados();
+    fill(80);
+    square(50,400,40,20)
+    fill('#ffff')
+    textSize(32);
+    text('Fallecidos', 100, 433);
     barrasMuertos();
     
+
     //gráfica de pastel
+    sombreado();
+    fill('#424242')
+    rect(25, 1235, 1300, 550, 20);
     pieChart(500, angles);
     //140, 180, 100, 60
     boxDataColor(350,1300,30,30, 140,"Infectados: 37.62%", 180, 1325);
@@ -37,6 +57,13 @@ function draw() {
     boxDataColor(950,1600,30,30, 60,"Negativos: 44.43%", 1010, 1625);
     
     mapaEstados();
+}
+
+function sombreado(){
+    //drawingContext.shadowOffsetX = 5;
+    //drawingContext.shadowOffsetY = 5;
+    drawingContext.shadowBlur = 10;
+    drawingContext.shadowColor = '#212121';
 }
 
 function drawBarMessage(txt,x,y){
@@ -63,7 +90,7 @@ function pieChart(diameter, data) {
 function boxDataColor(x,y, w, h, color,texto,xt,yt) {
     fill(color, 20, 20);
     rect(x, y, w, h,7);
-    fill(0);
+    fill('#fffff');
     textSize(18);
     text(texto, xt, yt);
 }
@@ -83,9 +110,9 @@ function barrasInfectados(){
             fill(110,0,0);
             rect((i *dist) + 80, 720, 25, (0.7* data.State[estados[i]].infected) / -250);
             textSize(14);
-            fill(0);
             //text(values[i], i * 40 + 80, 1000 - values[i], 25, values[i]);
             text(data.State[estados[i]].infected, (i * dist) + 80, 730, 25, estados[i]);
+            fill('#fffff')
             textSize(10);
             text(estados[i], (i * dist) + 80, 750, 25, estados[i]);
         }
@@ -96,9 +123,10 @@ function barrasInfectados(){
             fill(110,0,0);
             rect((cont *dist) + 80, 1000, 25, (0.7* data.State[estados[i]].infected) / -250);
             textSize(14);
-            fill(0);
+            //fill(0);
             //text(values[i], i * 40 + 80, 1000 - values[i], 25, values[i]);
             text(data.State[estados[i]].infected, (cont * dist) + 80, 1025, 25, estados[i]);
+            fill('#fffff')
             textSize(10);
             text(estados[i], (cont * dist) + 80, 1050, 25, estados[i]);
             cont++;
@@ -121,7 +149,7 @@ function barrasMuertos(){
             fill(80);
             rect((i *dist) + 80, 825, 25, (0.7* data.State[estados[i]].deceased) / 250);
             textSize(14);
-            fill(0);
+            fill('#fffff')
             //text(values[i], i * 40 + 80, 1000 - values[i], 25, values[i]);
             text(data.State[estados[i]].deceased, (i * dist) + 80, 800, 25, estados[i]);
             textSize(10);
@@ -132,7 +160,7 @@ function barrasMuertos(){
             fill(80);
             rect((cont *dist) + 80, 1125, 25, (0.7* data.State[estados[i]].deceased) / 250);
             textSize(14);
-            fill(0);
+            fill('#fffff')
             //text(values[i], i * 40 + 80, 1000 - values[i], 25, values[i]);
             text(data.State[estados[i]].deceased, (cont * dist) + 80, 1100, 25, estados[i]);
             textSize(10);
@@ -256,3 +284,4 @@ function mapaEstados(){
         
     };
 }
+

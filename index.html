@@ -5,6 +5,7 @@
         <title>Proyecto Final</title>
 
         <link rel="stylesheet" href="style.css">
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js" 
                 integrity="sha512-gQVBYBvfC+uyor5Teonjr9nmY1bN+DlOCezkhzg4ShpC5q81ogvFsr5IV4xXAj6HEtG7M1Pb2JCha97tVFItYQ=="
                 crossorigin="anonymous">
@@ -12,15 +13,41 @@
 
     </head>
     <body>
-        <h1 class="centrarh1">CoviApi</h1>
+
+
+        <h1 class="centrarh1" style="color: white;">CoviApi</h1>
         <div id="myCanvas" class="box"></div>
 
-        <div id="geochart-colors" class="center" style="width: 1350px;"></div>
+
+        <div class="rectangulo">
+            <h1 class="text" style="color: white;">Mapa de contagios</h1>
+             <div id="geochart-colors" class="center mapa" style="width: 1000px; height: 500px; margin-bottom: 100px;  margin-top: 100px; "></div>
+        </div>
+        <a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
+
+      
         
         <script src="sketch.js"></script>
         <script src="ApiCovid.js"></script>
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type='text/javascript'>
+            $(document).ready(function(){ 
+                $(window).scroll(function(){ 
+                    if ($(this).scrollTop() > 100) { 
+                        $('#scroll').fadeIn(); 
+                    } else { 
+                        $('#scroll').fadeOut(); 
+                    } 
+                }); 
+                $('#scroll').click(function(){ 
+                    $("html, body").animate({ scrollTop: 0 }, 600); 
+                    return false; 
+                }); 
+            });
+            </script>
+
     </body>
 </html>
