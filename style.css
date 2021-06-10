@@ -1,6 +1,14 @@
 body {
     padding: 0;
     margin: auto 0;
+    background-color:  #212121;
+}
+
+.mapa {
+    width: 1000px; 
+    height: 500px; 
+    margin-top: 100px;
+    margin-bottom: 200px;
 }
 
 .centrarh1 {
@@ -28,4 +36,60 @@ body {
 .center {
     margin: auto;
     width: 50%;
+}
+
+.text{
+    padding-top: 10px;
+    margin-left: 40px;
+}
+
+.rectangulo{
+    width: 1300px;
+    height: 800px;
+    margin-left: 20px;
+    border-radius: 2em;
+    background-color: #424242 ;
+}
+
+#scroll {
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    background-color:white;
+    text-indent:-9999px;
+    display:none;
+    -webkit-border-radius:60px;
+    -moz-border-radius:60px;
+    border-radius:60px
+}
+#scroll span {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-12px;
+    height:0;
+    width:0;
+    border:8px solid transparent;
+    border-bottom-color: black;
+}
+
+#scroll:hover span {
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-left:-8px;
+    margin-top:-12px;
+    height:0;
+    width:0;
+    border:8px solid transparent;
+    border-bottom-color: white;
+}
+#scroll:hover {
+    background-color:#6E0000;
+    opacity:1;filter:"alpha(opacity=100)";
+    -ms-filter:"alpha(opacity=100)";
 }
